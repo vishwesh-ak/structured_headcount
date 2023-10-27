@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import { pkg } from '@carbon/ibm-products';
 import './App.css';
+import './app.scss';
+import React, { Component } from 'react';
+import { Button, Content } from '@carbon/react';
+import CarbonHeader from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './content/Dashboard/Dashboard';
+import Home from './content/Home';
+import Login from './content/Login';
+import EmpPage from './content/EmpPage';
+import '@carbon/ibm-products/css/index.min.css';
+import NewPageDash from './content/Dashboard/NewPage/NewPageDash';
+//import DashNew from './content/Dashboard/dashnew';
 
-function App() {
+pkg.setAllComponents(true);
+pkg.setAllFeatures(true);
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Content>
+    <Routes>
+    <Route exact path="/" element={<Login />} />
+        <Route path="/home" element={<div><Home /><CarbonHeader /></div>} />
+        <Route exact path="/emppage" element={<div><EmpPage /><CarbonHeader /></div>} />
+        <Route exact path="/dashboard" element={<div><div className="maincontentpage"><Dashboard/></div><CarbonHeader /></div>} />
+        <Route path="/dashnew" element={<div><div className="maincontentpage"><NewPageDash/></div><CarbonHeader /></div>} />
+    </Routes>
+    </Content>
   );
 }
 
-export default App;

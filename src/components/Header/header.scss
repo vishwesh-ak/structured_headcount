@@ -1,0 +1,33 @@
+.nav-item {
+    color: white;
+  }
+    
+  .nav-list {
+    display: flex;
+    flex-direction: column; 
+    list-style-type: none;
+    padding-top: 12vh;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start; 
+    background-color: lightgray;
+    color: white;
+  }
+  
+  
+  
+  .header_logo {
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+  
+  }
+  .header {
+    background-color: lightgray;
+    color: white;
+    position: relative;
+    top: 5.5vh;
+    left: 0; 
+    size: 14px;
+  }
+  
